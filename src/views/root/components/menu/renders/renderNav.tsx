@@ -1,11 +1,15 @@
 import React from 'react';
 
+import { promo } from '@/src/index.tsx';
+import { appStore } from '@/src/store/store.tsx';
+import { logoutHandler } from '@/src/utils/checkAuth.ts';
+
 import I from '../types.ts';
 
 import { getNav, onNav } from '../../../utils/getNav.ts';
 
 const renderNav: I['renderNav'] = function () {
-    const { setState } = this.props;
+    const { setState, authUser } = this.props;
     const nav = getNav();
 
     return (
@@ -26,14 +30,30 @@ const renderNav: I['renderNav'] = function () {
                     {i.text}
                 </div>
             ))}
-            <div
-                className="menu__navButton _ROW _ROW_CENTER _profile"
-                onClick={() => {
-                    setState(false);
-                }}
-            >
-                К заданиям
-            </div>
+            {authUser ? (
+                <div
+                    className="menu__navButton _ROW _ROW_CENTER _profile"
+                    onClick={async () => {
+                        try {
+                            await promo.auth.logout();
+                            await logoutHandler();
+                        } catch (e) {}
+                        setState(false);
+                    }}
+                >
+                    Выход
+                </div>
+            ) : (
+                <div
+                    className="menu__navButton _ROW _ROW_CENTER _profile"
+                    onClick={() => {
+                        appStore.getState().setPopup({ name: 'profilePopup' });
+                        setState(false);
+                    }}
+                >
+                    К заданиям
+                </div>
+            )}
         </div>
     );
 };

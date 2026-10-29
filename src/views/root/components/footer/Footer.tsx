@@ -39,9 +39,9 @@ class Footer extends Default<FooterI['props'], FooterI['state']> implements Foot
                             Правила акции
                         </a>
                         <a
-                            href={mainContent?.docs?.policy}
-                            target="_blank"
+                            href="https://www.avito.ru/legal/rules/privacy-policy"
                             rel="noreferrer"
+                            target="_blank"
                             className="footer__navLink _CLICK"
                         >
                             Политика конфиденциальности

@@ -3,7 +3,9 @@ import React from 'react';
 import Default from '@/src/components/default/Default.tsx';
 import Icon from '@/src/components/icon/Icon.tsx';
 import Media from '@/src/components/media/Media.tsx';
-import { appStore } from '@/src/store/store.tsx';
+import { promo } from '@/src/index.tsx';
+import { StoreT, WithStore, appStore } from '@/src/store/store.tsx';
+import { logoutHandler } from '@/src/utils/checkAuth.ts';
 
 import TopBarI from './types.ts';
 
@@ -23,7 +25,7 @@ class TopBar extends Default<TopBarI['props'], TopBarI['state']> implements TopB
     renderNav = renderNav;
 
     render() {
-        const { className, mode, setMenuState } = this.props;
+        const { className, mode, setMenuState, authUser } = this.props;
 
         return (
             <div
@@ -48,14 +50,28 @@ class TopBar extends Default<TopBarI['props'], TopBarI['state']> implements TopB
                     />
                     <Media check={(d) => d === 'desktop'}>
                         {this.renderNav()}
-                        <div
-                            className="topBar__button _CLICK"
-                            onClick={() => {
-                                appStore.getState().setPopup({ name: 'profilePopup' });
-                            }}
-                        >
-                            К заданиям
-                        </div>
+                        {authUser ? (
+                            <div
+                                className="topBar__button _CLICK"
+                                onClick={async () => {
+                                    try {
+                                        await promo.auth.logout();
+                                        await logoutHandler();
+                                    } catch (e) {}
+                                }}
+                            >
+                                Выход
+                            </div>
+                        ) : (
+                            <div
+                                className="topBar__button _CLICK"
+                                onClick={() => {
+                                    appStore.getState().setPopup({ name: 'profilePopup' });
+                                }}
+                            >
+                                К заданиям
+                            </div>
+                        )}
                     </Media>
                     <Media check={(d) => d === 'mobile'}>
                         {mode === 'menu' ? (
@@ -82,4 +98,8 @@ class TopBar extends Default<TopBarI['props'], TopBarI['state']> implements TopB
     }
 }
 
-export default TopBar;
+const mapStore = (s: StoreT) => ({
+    authUser: s.authUser,
+});
+
+export default WithStore(TopBar, mapStore);

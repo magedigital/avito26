@@ -105,7 +105,19 @@ const appStore = create<StoreT & ReducersT>((set) => ({
         }
     })(),
     setAuthUser: (authUser) => set({ authUser, ...(authUser ? { isAuthCheck: true } : {}) }),
-    setMainContent: (c) => set({ mainContent: c }),
+    mainContent: (() => {
+        try {
+            const local = localStorage.getItem(enums.MAIN_CONTENT);
+            const localData = JSON.parse(local!) as MainContentT;
+            return localData;
+        } catch (e) {
+            return undefined;
+        }
+    })(),
+    setMainContent: (c) => {
+        localStorage.setItem(enums.MAIN_CONTENT, JSON.stringify(c));
+        set({ mainContent: c });
+    },
     gameInit: () => set({ isGameInit: true }),
     setLoadImage: () => set({ canLoadImage: true }),
     ...createPopupsStore(set),

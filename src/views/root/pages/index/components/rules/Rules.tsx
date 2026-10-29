@@ -19,7 +19,7 @@ class Rules extends Default<RulesI['props'], RulesI['state']> implements RulesI 
     }
 
     render() {
-        const { questions } = this.props;
+        const { questions, authUser } = this.props;
 
         return (
             <div ref={this.parent} className="indexRules _SECTION" data-ancor="rules">
@@ -60,7 +60,7 @@ class Rules extends Default<RulesI['props'], RulesI['state']> implements RulesI 
                                 <p className="indexRules__cardText">
                                     Выполняйте действия <br />
                                     на Авито. За&nbsp;выполнение и&nbsp;перевыполнение получайте
-                                    баллы по условиям своего маршрута.
+                                    баллы по&nbsp;условиям своего маршрута.
                                 </p>
                                 <img
                                     className="indexRules__cardThumb"
@@ -73,7 +73,7 @@ class Rules extends Default<RulesI['props'], RulesI['state']> implements RulesI 
                                 <h4 className="indexRules__cardTitle">Следите за рейтингом</h4>
                                 <p className="indexRules__cardText">
                                     Проверяйте баллы и своё место в&nbsp;боте. Рейтинг обновляется
-                                    ежедневно до 12:00 по&nbsp;московскому времени.
+                                    ежедневно до&nbsp;12:00 по&nbsp;московскому времени.
                                 </p>
                                 <img
                                     className="indexRules__cardThumb"
@@ -114,8 +114,8 @@ class Rules extends Default<RulesI['props'], RulesI['state']> implements RulesI 
                                         Победители будут объявлены 21.12.2026
                                     </h4>
                                     <p className="indexRules__offerBannerText">
-                                        Присоединяйтесь к конкурсу, выполняйте задания и поборитесь
-                                        за денежный приз на своём маршруте.
+                                        Присоединяйтесь к конкурсу, выполняйте задания
+                                        и&nbsp;поборитесь за денежный приз на своём маршруте.
                                     </p>
                                     <div className="indexRules__offerBannerButton">
                                         <Button
@@ -126,7 +126,7 @@ class Rules extends Default<RulesI['props'], RulesI['state']> implements RulesI 
                                                     .setPopup({ name: 'profilePopup' });
                                             }}
                                         >
-                                            Зарегистрироваться
+                                            {authUser ? 'К заданиям' : 'Зарегистрироваться'}
                                         </Button>
                                     </div>
                                 </div>

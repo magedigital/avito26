@@ -5,6 +5,7 @@ import { QuestionT } from './components/rules/components/question/types';
 
 type PropsT = {
     mainContent: StoreT['mainContent'];
+    authUser: StoreT['authUser'];
 };
 
 type StateT = {
@@ -18,6 +19,7 @@ type MainContentT = Partial<{
         policy: string;
         personal: string;
     }>;
+    botUserName: string;
 }>;
 
 type PrizeT = {

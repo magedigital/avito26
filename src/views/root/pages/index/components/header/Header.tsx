@@ -18,6 +18,8 @@ class Header extends Default<HeaderI['props'], HeaderI['state']> implements Head
     }
 
     render() {
+        const { authUser } = this.props;
+
         return (
             <div ref={this.parent} className="indexHeader _SECTION" data-ancor="index">
                 <div className="indexHeader__head _SECTION">
@@ -68,7 +70,7 @@ class Header extends Default<HeaderI['props'], HeaderI['state']> implements Head
                                             appStore.getState().setPopup({ name: 'profilePopup' });
                                         }}
                                     >
-                                        Зарегистрироваться
+                                        {authUser ? 'К заданиям' : 'Зарегистрироваться'}
                                     </Button>
                                 </div>
                                 <div className="indexHeader__button">
@@ -161,7 +163,7 @@ class Header extends Default<HeaderI['props'], HeaderI['state']> implements Head
                                     1 000 бонусов Авито — первым 10 участникам
                                 </h3>
                                 <p className="indexHeader__offerText">
-                                    Выполните все шесть недельных заданий раньше остальных.{' '}
+                                    Выполните все пять недельных заданий раньше остальных.{' '}
                                     <br className="_DESKTOP" />
                                     Первые 10 участников получат по 1 000 бонусов Авито.
                                 </p>

@@ -36,7 +36,12 @@ class Question extends Default<QuestionI['props'], QuestionI['state']> implement
                     this.setState({ isShow: !isShow });
                 }}
             >
-                <h3 className="indexRules__faqQuestionTitle">{question.name}</h3>
+                <h3
+                    className="indexRules__faqQuestionTitle"
+                    dangerouslySetInnerHTML={{
+                        __html: new StringService().setSpaces(question.name),
+                    }}
+                ></h3>
                 <Icon name="faq-drop" className="indexRules__faqQuestionIcon" />
                 <div
                     className="indexRules__faqQuestionContent"

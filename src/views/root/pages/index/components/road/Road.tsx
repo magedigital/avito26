@@ -17,6 +17,8 @@ class Road extends Default<RoadI['props'], RoadI['state']> implements RoadI {
     }
 
     render() {
+        const { authUser } = this.props;
+
         return (
             <div ref={this.parent} className="indexRoad _SECTION">
                 <div className="indexRoad__inner _INNER">
@@ -94,7 +96,7 @@ class Road extends Default<RoadI['props'], RoadI['state']> implements RoadI {
                                 appStore.getState().setPopup({ name: 'profilePopup' });
                             }}
                         >
-                            Зарегистрироваться
+                            {authUser ? 'К заданиям' : 'Зарегистрироваться'}
                         </Button>
                     </div>
                     <div className="indexRoad__instruction">
@@ -112,7 +114,7 @@ class Road extends Default<RoadI['props'], RoadI['state']> implements RoadI {
                                 </p>
                                 <p className="indexRoad__instructionContentBlockText _TEXT">
                                     Дополнительно еженедельно открывается новое задание. Условия,
-                                    сроки и баллы смотрите в Telegram-боте.
+                                    сроки и баллы смотрите в&nbsp;Telegram-боте.
                                 </p>
                             </div>
                             <div className="indexRoad__instructionContentBlock _info">
@@ -121,8 +123,8 @@ class Road extends Default<RoadI['props'], RoadI['state']> implements RoadI {
                                 </p>
                                 <div className="indexRoad__instructionContentBlockOptions">
                                     <div className="indexRoad__instructionContentBlockOption">
-                                        <b>Пробовать инструменты Авито:</b> подписку, выделение
-                                        объявлений, медийную рекламу.
+                                        <b>Пробовать инструменты Авито:</b> подписку и выделение
+                                        объявлений.
                                     </div>
                                     <div className="indexRoad__instructionContentBlockOption">
                                         <b>Общаться с клиентами:</b> отвечать на сообщения в чатах

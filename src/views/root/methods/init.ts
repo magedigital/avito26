@@ -51,6 +51,7 @@ const init: I['init'] = async function () {
             'privacy_policy',
             'rules',
             'personal_data_acceptance',
+            'BOT_USERNAME',
         ]);
         const mainContent: MainContentT = {
             footerDisclaimer: r.disclaimer?.value as string,
@@ -59,6 +60,7 @@ const init: I['init'] = async function () {
                 policy: r.privacy_policy?.value as string,
                 personal: r.personal_data_acceptance?.value as string,
             },
+            botUserName: r.BOT_USERNAME?.value as string,
         };
 
         appStore.getState().setMainContent(mainContent);

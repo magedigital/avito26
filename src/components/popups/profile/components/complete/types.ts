@@ -7,6 +7,7 @@ type PropsT = {
     setStep: ProfileI['setStep'];
     onRender: () => Promise<void>;
     authUser: StoreT['authUser'];
+    mainContent: StoreT['mainContent'];
 };
 
 type StateT = {

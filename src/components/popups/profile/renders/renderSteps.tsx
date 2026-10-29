@@ -59,6 +59,7 @@ const renderSteps: I['renderSteps'] = function () {
                         )}
                         {item._id === 'complete' && (
                             <CompleteBlock
+                                mainContent={mainContent}
                                 authUser={authUser}
                                 setStep={this.setStep.bind(this)}
                                 onRender={async () =>

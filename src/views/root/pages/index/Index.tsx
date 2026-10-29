@@ -34,14 +34,15 @@ class Index extends Page<IndexI['props'], IndexI['state']> implements IndexI {
 
     render() {
         const { questions } = this.state;
+        const { authUser } = this.props;
 
         return this.renderPage({
             className: '_index',
             render: () => (
                 <>
-                    <Header />
-                    <Road />
-                    <Rules questions={questions ?? []} />
+                    <Header authUser={authUser} />
+                    <Road authUser={authUser} />
+                    <Rules authUser={authUser} questions={questions ?? []} />
                     <Footer />
                 </>
             ),
@@ -51,6 +52,7 @@ class Index extends Page<IndexI['props'], IndexI['state']> implements IndexI {
 
 const mapStore = (s: StoreT) => ({
     mainContent: s.mainContent,
+    authUser: s.authUser,
 });
 
 export default WithStore(Index, mapStore);

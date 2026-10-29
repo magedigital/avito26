@@ -304,7 +304,7 @@
                 transition: $trans;
 
                 @include mob {
-                    font-size: 21rem;
+                    font-size: 20rem;
                 }
             }
 
@@ -326,6 +326,7 @@
                 padding-top: 12rem;
                 transition: $trans;
 
+                &,
                 & p {
                     color: #000;
                     font-size: 19rem;

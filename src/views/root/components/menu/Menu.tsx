@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Default from '@/src/components/default/Default.tsx';
+import { StoreT, WithStore } from '@/src/store/store.tsx';
 
 import keysCallback from './methods/keysCallback.ts';
 
@@ -36,4 +37,8 @@ class Menu extends Default<MenuI['props'], MenuI['state']> implements MenuI {
     }
 }
 
-export default Menu;
+const mapStore = (s: StoreT) => ({
+    authUser: s.authUser,
+});
+
+export default WithStore(Menu, mapStore);

@@ -21,8 +21,8 @@ const pageInit: I['pageInit'] = async function (this: I) {
     }
 
     try {
-        const r = await promo.resources.getResources(['faq']);
-        const data = r.faq?.value as { items: any[] };
+        const r = await promo.resources.getResources(['FAQ']);
+        const data = r.FAQ?.value as { items: any[] };
         const questions = data.items as QuestionT[];
 
         await this.asyncSetState({ questions });
