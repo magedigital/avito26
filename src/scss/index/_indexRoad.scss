@@ -1,0 +1,310 @@
+.indexRoad {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 40rem 0 130rem;
+    background: #1c0a3b;
+
+    @include mob {
+        padding: 0 0 130rem;
+    }
+
+    &::after {
+        position: absolute;
+        top: -100rem;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 1000rem;
+        background: linear-gradient(to bottom, #1e0b40, #3e168f, #1c0a3b);
+        content: "";
+        pointer-events: none;
+
+        @include mob {
+            top: 0;
+            height: 1500rem;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        content: "";
+
+        @include bg("/media/main-back-02.png", 100% auto, center 760rem);
+
+        @include mob {
+            @include bg("/media/main-back-02-mob.png", 100% auto, center 1674rem);
+        }
+    }
+
+    &__inner {
+        align-items: center;
+
+        @include mob {
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20rem;
+    }
+
+    &__text {
+        margin-bottom: 60rem;
+
+        @include mob {
+            margin-bottom: 46rem;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        width: calc(100% + 20rem);
+        margin-bottom: 48rem;
+
+        @include mob {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &Item {
+            width: calc(100% / 3);
+            padding: 0 10rem;
+
+            @include mob {
+                width: 100%;
+                padding: 0;
+
+                & + & {
+                    margin-top: 26rem;
+                }
+            }
+        }
+    }
+
+    &__card {
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        background: linear-gradient(to right, #926ed1 30%, #633da6 60%, #926ed1);
+        border-radius: 36rem;
+
+        @include mob {
+            height: 352rem;
+            padding: 1rem;
+            border-radius: 32rem;
+        }
+
+        &Inner {
+            width: 100%;
+            height: 100%;
+            padding: 28rem 28rem 20rem;
+            background: linear-gradient(to bottom, #492291, #5522a5, #4c208d);
+            border-radius: 34rem;
+
+            @include mob {
+                position: relative;
+                padding: 22rem 22rem 200rem;
+                background: linear-gradient(to bottom, #401f7a, #48218c, #50239e);
+                border-radius: 31rem;
+            }
+        }
+
+        &Title {
+            margin-bottom: 17rem;
+            color: #fff;
+            font-size: 24rem;
+
+            @include mob {
+                margin-bottom: 9rem;
+                font-size: 26rem;
+            }
+        }
+
+        &Options {
+            width: 100%;
+        }
+
+        &Option {
+            padding: 8rem 12rem;
+            color: #fff;
+            font-weight: 500;
+            font-size: 16rem;
+            border-radius: 360rem;
+
+            @include mob {
+                padding: 7rem 12rem;
+                font-size: 15.5rem;
+            }
+
+            & + & {
+                margin-top: 8rem;
+            }
+
+            &:first-child {
+                background: #965eeb;
+            }
+
+            &:last-child {
+                background: #c2a0fa;
+            }
+        }
+
+        &Thumb {
+            display: block;
+            width: 100%;
+            margin: -12rem 0 0 20rem;
+
+            @include mob {
+                position: absolute;
+                bottom: 20rem;
+                left: 50%;
+                width: 77%;
+                margin: 0;
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+
+    &__info {
+        width: 100%;
+        padding: 19rem 18rem;
+        color: #fff;
+        font-size: 16rem;
+        line-height: 1.24;
+        text-align: center;
+        background: rgba(#965eeb, 0.15);
+        border-radius: 16rem;
+
+        @include mob {
+            padding: 22rem;
+            font-size: 15rem;
+            line-height: 1.33;
+            text-align: left;
+        }
+    }
+
+    &__button {
+        margin-top: 60rem;
+
+        @include mob {
+            width: 100%;
+            margin-top: 46rem;
+        }
+    }
+
+    &__instruction {
+        width: 100%;
+        margin-top: 249rem;
+
+        @include mob {
+            margin-top: 344rem;
+        }
+
+        &Title {
+            margin-bottom: 26rem;
+        }
+
+        &Text {
+            margin-bottom: 24rem;
+            color: #fff;
+            font-size: 20rem;
+            line-height: 1;
+        }
+
+        &Content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 71rem;
+
+            @include mob {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 35rem;
+            }
+
+            &Block {
+                width: 500rem;
+
+                @include mob {
+                    width: 100%;
+                }
+
+                &._info {
+                    width: 704rem;
+                    margin-left: auto;
+                    padding: 28rem;
+                    background: rgba(#dfcdf3, 0.1);
+                    border: 2rem solid #876cb5;
+                    border-radius: 32rem;
+
+                    @include blur(20rem);
+
+                    @include mob {
+                        width: 100%;
+                        margin: 28rem 0 0;
+                        padding: 21rem 18rem;
+                        background: rgba(#dfcdf3, 0.07);
+                    }
+                }
+
+                &Title {
+                    margin-bottom: 16rem;
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 30rem;
+
+                    @include mob {
+                        margin-bottom: 18rem;
+                        font-size: 20rem;
+                    }
+                }
+
+                &Text {
+                    & + & {
+                        margin-top: 16rem;
+
+                        @include mob {
+                            margin-top: 0;
+                        }
+                    }
+                }
+
+                &Option {
+                    width: 100%;
+                    padding: 16rem 20rem;
+                    color: #fff;
+                    font-weight: 400;
+                    font-size: 20rem;
+                    border-radius: 24rem;
+
+                    @include mob {
+                        font-size: 18rem;
+                    }
+
+                    & + & {
+                        margin-top: 8rem;
+                    }
+
+                    & b {
+                        font-weight: 600;
+                    }
+
+                    &:first-child {
+                        background: #965eeb;
+                    }
+
+                    &:last-child {
+                        background: #4d11a7;
+                    }
+                }
+            }
+        }
+    }
+}

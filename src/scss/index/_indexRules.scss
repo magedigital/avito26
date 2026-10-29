@@ -1,0 +1,435 @@
+.indexRules {
+    position: relative;
+    z-index: 4;
+    margin-top: -100rem;
+    padding: 100rem 0 250rem;
+    background: #1c0a3b;
+
+    @include mob {
+        margin-top: -104rem;
+        padding: 50rem 0 270rem;
+        background: linear-gradient(to bottom, #1c0a3b calc(100% - 500rem), #340e6d);
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        content: "";
+        pointer-events: none;
+
+        @include bg("/media/main-back-03.jpg", 100% auto, center -74rem);
+
+        @include mob {
+            @include bg("/media/main-back-03-mob.jpg", 100% auto, center -24rem);
+        }
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        content: "";
+        pointer-events: none;
+
+        @include bg("/media/main-back-04.png", 100% auto, center bottom);
+
+        @include mob {
+            @include bg("/media/main-back-05-mob.png", 100% auto, center bottom);
+        }
+    }
+
+    &__top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 300rem;
+        background: linear-gradient(to bottom, #1c0a3b, rgba(#16074e, 0));
+
+        @include mob {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-bottom: 354rem;
+
+        @include mob {
+            margin-bottom: 280rem;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        width: calc(100% + 28rem);
+        margin-bottom: 60rem;
+        margin-left: -14rem;
+        counter-reset: rulesCount;
+
+        @include mob {
+            flex-direction: column;
+            width: 100%;
+            margin-left: 0;
+        }
+
+        &Item {
+            width: calc(100% / 4);
+            padding: 0 14rem;
+            counter-increment: rulesCount;
+
+            @include mob {
+                width: 100%;
+                padding: 0;
+
+                & + & {
+                    margin-top: 26rem;
+                }
+            }
+        }
+    }
+
+    &__cardsItem:last-child &__cardTitle {
+        letter-spacing: -3%;
+
+        @include mob {
+            letter-spacing: 0;
+        }
+    }
+
+    &__cardsItem:last-child &__cardThumb {
+        transform: translate(0, 0);
+
+        @include mob {
+            transform: translate(-50%, 0);
+        }
+    }
+
+    &__card {
+        width: 100%;
+        height: 100%;
+        padding: 18rem 18rem 12rem;
+        background: rgba(#000, 0.24);
+        border-radius: 36rem;
+
+        @include blur(14rem);
+
+        @include mob {
+            height: 389rem;
+            padding: 24rem 24rem 14rem;
+            border-radius: 32rem;
+        }
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            background: rgba(#cca8ff, 0.16);
+            border: 2rem solid #8f6fca;
+            border-radius: inherit;
+            content: "";
+        }
+
+        &::before {
+            display: block;
+            margin-bottom: 16rem;
+            color: #c2a0fa;
+            font-weight: 500;
+            font-size: 48rem;
+            content: "0" counter(rulesCount);
+
+            @include mob {
+                margin-bottom: 10rem;
+            }
+        }
+
+        &Title {
+            margin-bottom: 16rem;
+            color: #fff;
+            font-weight: 500;
+            font-size: 24rem;
+
+            @include mob {
+                margin-bottom: 9rem;
+                font-size: 26rem;
+            }
+        }
+
+        &Text {
+            margin-bottom: -10rem;
+            color: #fff;
+            font-size: 16rem;
+            line-height: 1.15;
+
+            @include mob {
+                margin-bottom: 26rem;
+            }
+        }
+
+        &Thumb {
+            display: block;
+            width: 67%;
+            margin: auto auto 0;
+            transform: translate(10rem, 0);
+
+            @include mob {
+                position: absolute;
+                bottom: 18rem;
+                left: 50%;
+                width: 48%;
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+
+    &__button {
+        margin: 0 auto;
+
+        @include mob {
+            display: none;
+        }
+    }
+
+    &__faq {
+        width: 100%;
+        margin-top: 387rem;
+        padding: 0 32rem;
+
+        @include mob {
+            position: relative;
+            margin-top: 170rem;
+            padding: 0;
+
+            &::before {
+                position: absolute;
+                top: -246rem;
+                left: 50%;
+                z-index: -1;
+                width: var(--wwidth);
+                height: 500rem;
+                transform: translate(-50%, 0);
+                content: "";
+
+                @include bg("/media/main-back-04-mob.jpg", 100% auto, center top);
+            }
+        }
+
+        &Title {
+            margin-bottom: 20rem;
+        }
+
+        &Text {
+            margin-bottom: 48rem;
+            font-size: 21rem;
+
+            @include mob {
+                font-size: 18rem;
+            }
+        }
+
+        &Questions {
+            width: 100%;
+
+            &Item {
+                width: 100%;
+
+                & + & {
+                    margin-top: 12rem;
+
+                    @include mob {
+                        margin-top: 8rem;
+                    }
+                }
+            }
+        }
+
+        &Question {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 24rem;
+            overflow: hidden;
+            background: #965eeb;
+            border-radius: 20rem;
+            transition: $trans;
+
+            @include mob {
+                padding: 20rem;
+                border-radius: 16rem;
+            }
+
+            &._show {
+                background: #fff;
+            }
+
+            &Icon {
+                position: absolute;
+                top: 34rem;
+                right: 32rem;
+                z-index: 2;
+                width: 22rem;
+                height: 22rem;
+                transition: $trans;
+
+                @include mob {
+                    top: 26rem;
+                    right: 26rem;
+                    width: 20rem;
+                    height: 20rem;
+                }
+            }
+
+            &._show &Icon {
+                transform: rotate(-180deg);
+
+                @include icon(#4d11a7);
+            }
+
+            &Title {
+                padding: 3rem 40rem 3rem 0;
+                color: #fff;
+                font-weight: 500;
+                font-size: 28rem;
+                line-height: 1.2;
+                transition: $trans;
+
+                @include mob {
+                    font-size: 21rem;
+                }
+            }
+
+            &._show &Title {
+                color: #4d11a7;
+            }
+
+            &Content {
+                width: 100%;
+                transition: $trans;
+            }
+
+            &:not(._show) &Inner {
+                transform: translate(0, 12rem);
+            }
+
+            &Inner {
+                width: 100%;
+                padding-top: 12rem;
+                transition: $trans;
+
+                & p {
+                    color: #000;
+                    font-size: 19rem;
+                    line-height: 1.24;
+
+                    @include mob {
+                        font-size: 18rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__offer {
+        width: 100%;
+        margin-top: 124rem;
+
+        @include mob {
+            margin-top: 80rem;
+        }
+
+        &Title {
+            margin-bottom: 48rem;
+
+            @include mob {
+                margin-bottom: 20rem;
+            }
+        }
+
+        &Banner {
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to right, #8b6cbe, #583b87, #583b87);
+            border-radius: 36rem;
+
+            @include mob {
+                padding: 3rem;
+                border-radius: 20rem;
+            }
+
+            &Inner {
+                position: relative;
+                padding: 36rem 36rem 57rem;
+                background: linear-gradient(to bottom, #381c65, #3a1c69, #3c1e6d);
+                border-radius: 34rem;
+
+                @include mob {
+                    padding: 20rem 20rem 220rem;
+                    border-radius: 17rem;
+                }
+
+                &::before {
+                    position: absolute;
+                    right: 62rem;
+                    bottom: 0;
+                    z-index: 2;
+                    width: 420rem;
+                    height: 260rem;
+                    content: "";
+                    pointer-events: none;
+
+                    @include bg("/media/all-bonus.png", contain, right bottom);
+
+                    @include mob {
+                        width: 270rem;
+                        height: 200rem;
+                    }
+                }
+            }
+
+            &Content {
+                max-width: 551rem;
+            }
+
+            &Title {
+                margin-bottom: 24rem;
+                color: #fff;
+                font-size: 28rem;
+                line-height: 1.3;
+
+                @include mob {
+                    margin-bottom: 20rem;
+                    font-size: 26rem;
+                    line-height: 1.1;
+                }
+            }
+
+            &Text {
+                margin-bottom: 48rem;
+                color: #fff;
+                font-size: 20rem;
+                line-height: 1.3;
+
+                @include mob {
+                    margin-bottom: 30rem;
+                    font-size: 18rem;
+                }
+            }
+
+            &Button {
+                @include mob {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

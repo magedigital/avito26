@@ -1,0 +1,512 @@
+.indexHeader {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #211161 calc(100% - 750rem), #1c0a3b);
+
+    @include mob {
+        background: linear-gradient(to bottom, #211161 300rem, #1c0a3b);
+    }
+
+    &__head {
+        position: relative;
+        z-index: 2;
+        padding: 126rem 0 644rem;
+        background: linear-gradient(to right, #100754 33%, #21166c 50%, #57459d 100%);
+
+        @include mob {
+            padding: 89rem 0 180rem;
+
+            @include bg("/media/main-back-01-mob.jpg", 100% auto, center top);
+        }
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            content: "";
+            pointer-events: none;
+
+            @include bg("/media/main-back-01.png", 100% auto, center top);
+
+            @include mob {
+                display: none;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            top: -438rem;
+            left: 556rem;
+            z-index: 1;
+            width: 1116rem;
+            height: 1116rem;
+            background: rgb(220 167 253);
+            border-radius: 50%;
+            opacity: 0.8;
+            filter: blur(200rem);
+            mix-blend-mode: soft-light;
+            content: "";
+            pointer-events: none;
+
+            @include mob {
+                display: none;
+            }
+        }
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__content {
+        width: 580rem;
+
+        @include mob {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 24rem;
+        color: #fff;
+        font-weight: 500;
+        font-size: 64rem;
+        line-height: 0.95;
+
+        @include mob {
+            margin-bottom: 20rem;
+            font-size: 41rem;
+        }
+
+        &::before {
+            position: absolute;
+            bottom: -4rem;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 12rem;
+            background: linear-gradient(to right, #c2a0fa, rgba(#c2a0fa, 0.2));
+            border-radius: 360rem;
+            content: "";
+
+            @include mob {
+                bottom: -3rem;
+                height: 7rem;
+            }
+        }
+    }
+
+    &__subTitle {
+        margin-bottom: 18rem;
+        color: #fff;
+        font-size: 32rem;
+        line-height: 1;
+
+        @include mob {
+            max-width: 70%;
+            margin-bottom: 230rem;
+            font-size: 26rem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 32rem;
+        color: #fff;
+        font-size: 18rem;
+        line-height: 1.24;
+
+        @include mob {
+            line-height: 1.2;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+
+        @include mob {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        width: 280rem;
+
+        @include mob {
+            width: 100%;
+        }
+
+        & + & {
+            margin-left: 20rem;
+
+            @include mob {
+                margin-top: 20rem;
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__cards {
+        position: absolute;
+        top: 12rem;
+        right: 346rem;
+        z-index: 2;
+        width: 223rem;
+
+        @include mob {
+            position: relative;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 6rem 0 44rem;
+        }
+    }
+
+    &__card {
+        position: relative;
+        width: 100%;
+        padding: 2rem;
+        background: linear-gradient(80deg, #bea0eb 30%, #9566dd 60%, #bea0eb);
+        border-radius: 16rem;
+
+        @include mob {
+            width: 118rem;
+            padding: 1rem;
+            background: linear-gradient(80deg, #8a6dc5 30%, #5f449b 60%, #7b5fb6);
+            border-radius: 12rem;
+        }
+
+        & + & {
+            margin-top: 10rem;
+
+            @include mob {
+                margin-top: 0;
+            }
+        }
+
+        &Inner {
+            width: 100%;
+            height: 100%;
+            padding: 16rem 12rem 17rem;
+            background: linear-gradient(to right, #5d3ab3, #7345c2);
+            border-radius: 14rem;
+
+            @include mob {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 15rem 9rem 9rem;
+                background: #371f76;
+                border-radius: 11rem;
+            }
+        }
+
+        &Icon {
+            position: absolute;
+            top: -14rem;
+            right: -14rem;
+            z-index: 2;
+            width: 58rem;
+            height: 58rem;
+            padding: 11rem;
+            background: linear-gradient(to right, #9b7fcd, #a688c6);
+            border-radius: 50%;
+            box-shadow: -1rem 0 0 0 #dadada;
+
+            @include mob {
+                top: -13rem;
+                right: 10rem;
+                width: 34rem;
+                height: 34rem;
+                padding: 6rem;
+                background: linear-gradient(to right, #614e91, #735b92);
+            }
+
+            &::before {
+                z-index: 1;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(70deg, #cc94fa, #ffeafa);
+                border-radius: 50%;
+                content: "";
+
+                @include mob {
+                    background: linear-gradient(70deg, #9d66eb, #ffc7ec);
+                }
+            }
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 2;
+                width: 20rem;
+                height: 20rem;
+                transform: translate(-50%, -50%);
+                content: "";
+
+                @include bg("/media/done-icon.svg", contain, center);
+
+                @include mob {
+                    width: 11rem;
+                    height: 11rem;
+                }
+            }
+        }
+
+        &Support {
+            margin-bottom: 2rem;
+            color: #fff;
+            font-size: 16rem;
+
+            @include mob {
+                font-size: 12rem;
+            }
+        }
+
+        &Title {
+            margin-bottom: 12rem;
+            color: #fff;
+            font-size: 36rem;
+            line-height: 1;
+
+            @include mob {
+                margin-bottom: 9rem;
+                font-size: 24.5rem;
+                white-space: nowrap;
+            }
+        }
+
+        &Text {
+            color: #fff;
+            font-size: 16rem;
+
+            @include mob {
+                font-size: 13rem;
+            }
+        }
+    }
+
+    &__foot {
+        position: relative;
+        z-index: 4;
+        margin-top: -94rem;
+        padding: 0 0 100rem;
+
+        @include mob {
+            margin-top: -100rem;
+            padding: 0 0 84rem;
+        }
+    }
+
+    &__prizes {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+
+        &Title {
+            margin-bottom: 15rem;
+
+            @include mob {
+                margin-bottom: 27rem;
+            }
+        }
+
+        &SubTitle {
+            margin-bottom: 21rem;
+            color: #fff;
+            font-weight: 400;
+            font-size: 24rem;
+
+            @include mob {
+                font-size: 26rem;
+                line-height: 0.98;
+            }
+        }
+
+        &Cards {
+            display: flex;
+            width: calc(100% + 48rem);
+            margin: 55rem 0 0 -24rem;
+
+            @include mob {
+                flex-direction: column;
+                width: 100%;
+                margin: 46rem 0 0;
+            }
+        }
+
+        &Card {
+            width: calc(100% / 3);
+            padding: 0 24rem;
+
+            @include mob {
+                width: 100%;
+                padding: 0;
+
+                & + & {
+                    margin-top: 22rem;
+                }
+            }
+        }
+    }
+
+    &__prize {
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        background: linear-gradient(to right, #8a6dc6 30%, #573e98 60%, #775bb4);
+        border-radius: 36rem;
+
+        @include mob {
+            padding: 1rem;
+            border-radius: 32rem;
+        }
+
+        &Inner {
+            width: 100%;
+            height: 100%;
+            padding: 28rem;
+            background: linear-gradient(to bottom, #38207b, #361d6c);
+            border-radius: 34rem;
+
+            @include mob {
+                padding: 27rem;
+                border-radius: 31rem;
+            }
+        }
+
+        &Badge {
+            display: flex;
+            align-items: center;
+            height: 38rem;
+            margin-bottom: 8rem;
+            padding: 4rem 4rem 6rem 12rem;
+            color: #fff;
+            font-size: 18rem;
+            background: linear-gradient(to right, #785bbe, #896fc6);
+            border-radius: 360rem;
+            box-shadow: -0.5rem -0.5rem 0 0 #fff;
+
+            @include mob {
+                height: 34rem;
+                margin-bottom: 6rem;
+                padding: 4rem 4rem 6rem 13rem;
+                font-size: 15.5rem;
+            }
+
+            &::after {
+                display: block;
+                width: 31rem;
+                height: 31rem;
+                margin: 2rem 0 0 15rem;
+                content: "";
+
+                @include bg("/media/gift.svg", contain, center);
+
+                @include mob {
+                    width: 29rem;
+                    height: 29rem;
+                    margin: 2rem 0 0 15rem;
+                }
+            }
+        }
+
+        &Title {
+            margin-bottom: 7rem;
+            color: #fff;
+            font-size: 64rem;
+            line-height: 1;
+
+            @include mob {
+                margin-bottom: 3rem;
+                font-size: 62.5rem;
+            }
+        }
+
+        &Text {
+            color: #fff;
+            font-size: 16rem;
+            line-height: 1;
+        }
+
+        &Thumb {
+            display: block;
+            width: 80%;
+            margin: 40rem auto 0;
+
+            @include mob {
+                width: 75%;
+                margin: 30rem auto 0;
+            }
+        }
+    }
+
+    &__offer {
+        position: relative;
+        width: 100%;
+        margin-top: 70rem;
+        padding: 60rem;
+        background: #4d11a7;
+        border-radius: 40rem;
+
+        @include mob {
+            margin-top: 44rem;
+            padding: 22rem 22rem 213rem;
+            border-radius: 34rem;
+        }
+
+        &::after {
+            position: absolute;
+            right: 118rem;
+            bottom: 0;
+            z-index: 2;
+            width: 260rem;
+            height: 208rem;
+            content: "";
+
+            @include bg("/media/prize-bonus.png", contain, right bottom);
+
+            @include mob {
+                right: 68rem;
+                width: 230rem;
+            }
+        }
+
+        &Inner {
+            max-width: 720rem;
+        }
+
+        &Title {
+            margin-bottom: 20rem;
+            color: #fff;
+            font-weight: 500;
+            font-size: 30rem;
+
+            @include mob {
+                margin-bottom: 17rem;
+                font-size: 28rem;
+            }
+        }
+
+        &Text {
+            color: #fff;
+            font-size: 20rem;
+            line-height: 1.24;
+
+            @include mob {
+                font-size: 18rem;
+            }
+        }
+    }
+}

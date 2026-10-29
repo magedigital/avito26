@@ -1,0 +1,14 @@
+.error {
+    width: 100%;
+
+    &__item {
+        width: 100%;
+    }
+
+    &__text {
+        color: #ff4053;
+        font-weight: 400;
+        font-size: 14rem;
+        line-height: 1.24;
+    }
+}

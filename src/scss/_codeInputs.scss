@@ -1,0 +1,80 @@
+.codeInputs {
+    position: relative;
+    justify-content: center;
+    width: 100%;
+
+    @include mob {
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 72rem;
+        height: 72rem;
+        background: #f7f7f7;
+        border: 1rem solid #ceb4f5;
+        border-radius: 12rem;
+
+        @include mob {
+            width: 48rem;
+            height: 66rem;
+            border-radius: 14rem;
+        }
+
+        & + & {
+            margin-left: 10rem;
+
+            @include mob {
+                margin-left: 0;
+            }
+        }
+
+        &Input {
+            width: 100%;
+            height: 100%;
+            padding: 8rem;
+            color: #000;
+            font-weight: 500;
+            font-size: 32rem;
+            line-height: 1.4;
+            text-align: center;
+
+            @include mob {
+                font-size: 30rem;
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                margin: 0;
+                -webkit-appearance: none;
+            }
+        }
+    }
+
+    &__loader {
+        top: 50%;
+        left: 100%;
+        width: 26rem;
+        height: 26rem;
+        margin-left: 10rem;
+        transform: translate(0, -50%);
+
+        & ._LL {
+            background: #5d279e !important;
+        }
+
+        @include mob {
+            top: 3rem;
+            right: 3rem;
+            left: auto;
+            width: 20rem;
+            height: 20rem;
+            margin: 0;
+            transform: translate(0, 0);
+
+            & ._LOADERITEM {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

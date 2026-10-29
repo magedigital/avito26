@@ -1,0 +1,90 @@
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    &__view {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 28rem;
+        padding-left: 34rem;
+
+        @include mob {
+            padding-left: 36rem;
+        }
+
+        &Inner {
+            color: #000;
+            font-weight: 400;
+            font-size: 16rem;
+            line-height: 1.3;
+
+            @include mob {
+                font-size: 16rem;
+            }
+
+            & a {
+                display: inline-block;
+                color: #0af;
+                font-weight: 500;
+                line-height: 1;
+                border-bottom: 1px solid rgba(#0af, 0.64);
+
+                @include mob {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    &__box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 22rem;
+        height: 22rem;
+        background: #fff;
+        border: 1rem solid #bcc9d7;
+        border-radius: 5rem;
+        transition: $trans;
+
+        @include mob {
+            width: 25rem;
+            height: 25rem;
+        }
+
+        &Icon {
+            width: 15rem;
+            height: 15rem;
+            opacity: 0;
+            transition: $trans;
+
+            @include icon(#fff);
+
+            @include mob {
+                width: 16rem;
+                height: 16rem;
+            }
+        }
+    }
+
+    &__input:checked ~ &__view &__box {
+        background: #0af;
+        border-color: #0af;
+
+        &Icon {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &__topInfo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40rem;
+        padding: 12rem;
+        color: #fff;
+        font-size: 16rem;
+        text-align: center;
+        background: #00431e;
+
+        @include mob {
+            height: 64rem;
+        }
+
+        & a {
+            display: inline-block;
+            color: #fff;
+            border-bottom: 1rem solid rgba(#fff, 0.72);
+        }
+    }
+
+    &._withTop &__topBar {
+        top: 40rem;
+
+        @include mob {
+            top: 64rem;
+        }
+
+        &._fix:not(._show) {
+            transform: translate(0, calc(-100% - 40rem));
+
+            @include mob {
+                transform: translate(0, calc(-100% - 64rem));
+            }
+        }
+    }
+
+    &__topBar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        transition: $trans;
+
+        &._fix {
+            z-index: 3;
+            background: rgba(#48349c, 0.3);
+
+            @include blur(10rem);
+        }
+
+        &._fix:not(._show) {
+            transform: translate(0, -100%);
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        width: 100%;
+        height: 100%;
+    }
+
+    &._withTop &__menu {
+        padding-top: 64rem;
+    }
+
+    &__scroll {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+
+        &Inner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: var(--wheight);
+            background: #1c0a3b;
+        }
+
+        &Content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            // transform: translate(0, -8200px);
+            transition: $trans;
+        }
+    }
+
+    &__loader {
+        top: 0;
+        height: var(--wheight);
+    }
+
+    &._loading &__scrollContent {
+        opacity: 0;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20rem;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__footer {
+        margin-top: auto;
+    }
+}

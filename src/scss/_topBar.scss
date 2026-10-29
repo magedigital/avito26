@@ -1,0 +1,89 @@
+.topBar {
+    position: relative;
+    width: 100%;
+    padding: 20rem 0;
+
+    @include mob {
+        padding: 20rem 0;
+    }
+
+    .page._inner .page__topBar:not(._fix) & {
+        padding: 16rem 0;
+    }
+
+    &._mobMenu {
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    &__inner {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__logo {
+        width: 214rem;
+        height: 32rem;
+        margin-right: auto;
+
+        @include mob {
+            width: 190rem;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        margin-right: 28rem;
+
+        &Item {
+            & + & {
+                margin-left: 28rem;
+            }
+        }
+
+        &Link {
+            color: #fff;
+            font-weight: 500;
+            font-size: 16rem;
+            transition: $trans;
+
+            @include hover {
+                &:hover {
+                    color: #d9c9e9;
+                }
+            }
+        }
+    }
+
+    &__button {
+        height: 42rem;
+        padding: 12rem 20rem;
+        color: #fff;
+        font-size: 16rem;
+        background: #8a54e1;
+        border-radius: 12rem;
+        transition: $trans;
+
+        @include hover {
+            &:hover {
+                background: #9a63f2;
+            }
+        }
+    }
+
+    &__icon {
+        width: 30rem;
+        height: 30rem;
+        margin: -3rem 0 0 auto;
+
+        &._close {
+            width: 24rem;
+            height: 24rem;
+            margin: -3rem 2rem 0 auto;
+        }
+    }
+}
