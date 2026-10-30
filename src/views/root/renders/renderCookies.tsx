@@ -9,10 +9,6 @@ import I from '../types.ts';
 const renderCookies: I['renderCookies'] = function () {
     const { isCookiesShow } = this.props;
 
-    if (1) {
-        return;
-    }
-
     return (
         <Fade className="body__cookies" isShow={!!isCookiesShow}>
             <Cookies />

@@ -29,7 +29,7 @@ class Cookies extends Default<CookiesI['props'], CookiesI['state']> implements C
                             appStore.getState().setCookiesState(false);
                         }}
                     >
-                        <Icon name="cookies-close" />
+                        <Icon name="popup-close" />
                     </div>
                     <h4 className="cookies__title">Используем куки</h4>
                     <p

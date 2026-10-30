@@ -76,12 +76,15 @@ export default async function checkAuth({ redirect }: ParamsT): Promise<ProfileT
         user.phone = user.phone.slice(1);
     }
 
-    if (user.payload?.category && 0) {
+    if (user.payload?.category) {
         const r = await promo.resources.getDictionary<CategoryT>('dict_categories', {
             search: user.payload?.category as string,
         });
+        const category = r.items?.find((i) => i.code === user.payload?.category);
 
-        console.log(r);
+        if (category) {
+            user.categoryTitle = category.name;
+        }
     }
 
     if (redirect) {

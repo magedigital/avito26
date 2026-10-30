@@ -59,7 +59,7 @@ class CompleteBlock
                     </div>
                     <div className="popup__blockAnketField">
                         <span>Вид услуги</span>
-                        <p>{authUser.payload?.category as string}</p>
+                        <p>{authUser.categoryTitle}</p>
                     </div>
                 </div>
                 <div className="popup__blockButton">
