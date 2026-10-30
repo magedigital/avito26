@@ -56,7 +56,10 @@ class AnketBlock extends Editor<AnketBlockI['props'], AnketBlockI['state']> impl
                                         }}
                                         info={
                                             n === 'avito_id'
-                                                ? { text: 'Где найти Avito ID?', href: '#' }
+                                                ? {
+                                                      text: 'Где найти Avito ID?',
+                                                      href: 'https://support.avito.ru/sections/1790?articleId=9592',
+                                                  }
                                                 : undefined
                                         }
                                     />

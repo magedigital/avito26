@@ -12,6 +12,11 @@ const sendForm: I['sendForm'] = async function () {
         return;
     }
 
+    if (!form.category) {
+        await this.asyncSetState({ error: 'Необходимо выбрать категорию' });
+        return;
+    }
+
     await this.asyncSetState({ error: undefined, loadingKey: 'send' });
 
     try {
