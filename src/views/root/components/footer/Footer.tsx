@@ -46,14 +46,6 @@ class Footer extends Default<FooterI['props'], FooterI['state']> implements Foot
                         >
                             Политика конфиденциальности
                         </a>
-                        <a
-                            href={mainContent?.docs?.personal}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="footer__navLink _CLICK"
-                        >
-                            Обработка персональных данных
-                        </a>
                     </div>
                     <p
                         className="footer__text"
