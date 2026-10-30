@@ -18,8 +18,6 @@ class Cookies extends Default<CookiesI['props'], CookiesI['state']> implements C
     }
 
     render() {
-        const { mainContent } = this.props;
-
         return (
             <div ref={this.parent} className="cookies">
                 <div className="cookies__inner">
@@ -36,7 +34,7 @@ class Cookies extends Default<CookiesI['props'], CookiesI['state']> implements C
                         className="cookies__text"
                         dangerouslySetInnerHTML={{
                             __html: new StringService().setSpaces(
-                                `Данный сайт использует файлы-cookies, а также другие технологии для улучшения работы, совершенствования сервисов, определения пользовательских предпочтений и обеспечения безопасности. Продолжая работу с сайтом, Вы даете согласие на обработку файлов-cookies в соответствии с <a href="${mainContent?.docs?.policy}">Политикой в отношении обработки персональных данных</a>. При несогласии Вы можете отключить обработку файлов-cookies в настройках Вашего браузера или закрыть страницу сайта.`,
+                                `Данный сайт использует файлы-cookies, а также другие технологии для улучшения работы, совершенствования сервисов, определения пользовательских предпочтений и обеспечения безопасности. Продолжая работу с сайтом, Вы даете согласие на обработку файлов-cookies в соответствии с <a href="https://www.avito.ru/legal/rules/privacy-policy">Политикой конфиденциальности</a>. При несогласии Вы можете отключить обработку файлов-cookies в настройках Вашего браузера или закрыть страницу сайта.`,
                             ),
                         }}
                     ></p>
