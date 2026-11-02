@@ -194,10 +194,6 @@
 
     &__button {
         margin: 0 auto;
-
-        @include mob {
-            display: none;
-        }
     }
 
     &__faq {
