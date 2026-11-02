@@ -52,11 +52,12 @@ const init: I['init'] = async function () {
             'rules',
             'personal_data_acceptance',
             'BOT_USERNAME',
+            'RULES_URL',
         ]);
         const mainContent: MainContentT = {
             footerDisclaimer: r.disclaimer?.value as string,
             docs: {
-                rules: r.rules?.value as string,
+                rules: r.RULES_URL?.value as string,
                 policy: r.privacy_policy?.value as string,
                 personal: r.personal_data_acceptance?.value as string,
             },
