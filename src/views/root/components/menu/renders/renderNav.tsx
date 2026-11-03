@@ -3,6 +3,7 @@ import React from 'react';
 import { promo } from '@/src/index.tsx';
 import { appStore } from '@/src/store/store.tsx';
 import { logoutHandler } from '@/src/utils/checkAuth.ts';
+import sendGoal from '@/src/utils/sendGoal.ts';
 
 import I from '../types.ts';
 
@@ -49,6 +50,7 @@ const renderNav: I['renderNav'] = function () {
                     onClick={() => {
                         appStore.getState().setPopup({ name: 'profilePopup' });
                         setState(false);
+                        sendGoal('headerTasksBtn');
                     }}
                 >
                     К заданиям
