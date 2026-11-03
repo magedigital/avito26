@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@/src/components/button/Button.tsx';
 import Default from '@/src/components/default/Default.tsx';
 import { appStore } from '@/src/store/store.tsx';
+import sendGoal from '@/src/utils/sendGoal.ts';
 
 import Question from './components/question/Question.tsx';
 
@@ -87,6 +88,7 @@ class Rules extends Default<RulesI['props'], RulesI['state']> implements RulesI 
                             className="_main"
                             onClick={() => {
                                 appStore.getState().setPopup({ name: 'profilePopup' });
+                                sendGoal('AscentBtn');
                             }}
                         >
                             Начать восхождение
@@ -124,6 +126,9 @@ class Rules extends Default<RulesI['props'], RulesI['state']> implements RulesI 
                                                 appStore
                                                     .getState()
                                                     .setPopup({ name: 'profilePopup' });
+                                                if (!authUser) {
+                                                    sendGoal('WinnersRegBtn');
+                                                }
                                             }}
                                         >
                                             {authUser ? 'К заданиям' : 'Зарегистрироваться'}

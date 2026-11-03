@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@/src/components/button/Button.tsx';
 import Default from '@/src/components/default/Default.tsx';
 import { appStore } from '@/src/store/store.tsx';
+import sendGoal from '@/src/utils/sendGoal.ts';
 import { onNav } from '@/src/views/root/utils/getNav.ts';
 
 import HeaderI from './types.ts';
@@ -68,6 +69,9 @@ class Header extends Default<HeaderI['props'], HeaderI['state']> implements Head
                                         className="_main"
                                         onClick={() => {
                                             appStore.getState().setPopup({ name: 'profilePopup' });
+                                            if (!authUser) {
+                                                sendGoal('headerRegBtn');
+                                            }
                                         }}
                                     >
                                         {authUser ? 'К заданиям' : 'Зарегистрироваться'}
@@ -86,6 +90,7 @@ class Header extends Default<HeaderI['props'], HeaderI['state']> implements Head
                                                     text: '',
                                                 },
                                             });
+                                            sendGoal('headerWorksBtn');
                                         }}
                                     >
                                         Как это работает

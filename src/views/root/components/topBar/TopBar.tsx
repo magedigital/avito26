@@ -6,6 +6,7 @@ import Media from '@/src/components/media/Media.tsx';
 import { promo } from '@/src/index.tsx';
 import { StoreT, WithStore, appStore } from '@/src/store/store.tsx';
 import { logoutHandler } from '@/src/utils/checkAuth.ts';
+import sendGoal from '@/src/utils/sendGoal.ts';
 
 import TopBarI from './types.ts';
 
@@ -67,6 +68,7 @@ class TopBar extends Default<TopBarI['props'], TopBarI['state']> implements TopB
                                 className="topBar__button _CLICK"
                                 onClick={() => {
                                     appStore.getState().setPopup({ name: 'profilePopup' });
+                                    sendGoal('headerTasksBtn');
                                 }}
                             >
                                 К заданиям

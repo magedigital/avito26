@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@/src/components/button/Button.tsx';
 import Default from '@/src/components/default/Default.tsx';
 import { appStore } from '@/src/store/store.tsx';
+import sendGoal from '@/src/utils/sendGoal.ts';
 
 import RoadI from './types.ts';
 
@@ -94,6 +95,9 @@ class Road extends Default<RoadI['props'], RoadI['state']> implements RoadI {
                             className="_main"
                             onClick={() => {
                                 appStore.getState().setPopup({ name: 'profilePopup' });
+                                if (!authUser) {
+                                    sendGoal('RouteRegBtn');
+                                }
                             }}
                         >
                             {authUser ? 'К заданиям' : 'Зарегистрироваться'}
