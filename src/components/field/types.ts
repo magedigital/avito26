@@ -12,6 +12,7 @@ type PropsT = {
         text: string;
         href?: string;
     };
+    error?: string;
 } & FieldT;
 
 type StateT = {

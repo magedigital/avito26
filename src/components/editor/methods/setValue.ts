@@ -9,6 +9,7 @@ const setValue: I['setValue'] = async function ({ data, targetName, arrById }) {
 
     const savedTargetName = this.getSavedTargetName(targetName);
     const resultTarget = structuredClone(target) as ObjT;
+    const errors = this.state.errors;
 
     Object.keys(data).forEach((key) => {
         const value = data[key];
@@ -33,13 +34,22 @@ const setValue: I['setValue'] = async function ({ data, targetName, arrById }) {
             } else {
                 delete this.changes[key];
             }
+
+            if (errors?.[thisKey]) {
+                delete errors[thisKey];
+            }
         }
     });
 
     await this.asyncSetState({
         [targetName]: resultTarget,
         isEdited: Object.keys(this.changes).length > 0,
+        errors,
     });
+
+    if (this.props.onRender) {
+        await this.props.onRender();
+    }
 };
 
 export default setValue;

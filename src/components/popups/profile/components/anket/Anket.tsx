@@ -26,7 +26,7 @@ class AnketBlock extends Editor<AnketBlockI['props'], AnketBlockI['state']> impl
     sendForm = sendForm;
 
     render() {
-        const { form, categories, loadingKey, error } = this.state;
+        const { form, categories, loadingKey, error, errors } = this.state;
         const { onRender } = this.props;
 
         return (
@@ -62,6 +62,7 @@ class AnketBlock extends Editor<AnketBlockI['props'], AnketBlockI['state']> impl
                                                   }
                                                 : undefined
                                         }
+                                        error={errors?.[n]}
                                     />
                                 </div>
                             );

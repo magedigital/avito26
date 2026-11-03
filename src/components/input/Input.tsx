@@ -55,7 +55,7 @@ class Input extends Default<InputI['props'], InputI['state']> implements InputI 
 
     render() {
         const { isFocus } = this.state;
-        const { value, className, support, disabled, isArea, isPassword } = this.props;
+        const { value, className, support, disabled, isArea, isPassword, error } = this.props;
         const Tag = isArea ? 'textarea' : 'input';
 
         return (
@@ -67,6 +67,7 @@ class Input extends Default<InputI['props'], InputI['state']> implements InputI 
                     className,
                     isFocus || value ? '_fill' : '',
                     isArea && '_area',
+                    error && '_error',
                 )}
             >
                 {support && (

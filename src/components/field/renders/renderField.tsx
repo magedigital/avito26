@@ -24,6 +24,7 @@ const renderField: I['renderField'] = function () {
         className,
         disabled,
         data,
+        error,
     } = this.props;
 
     if (type === 'input') {
@@ -49,6 +50,7 @@ const renderField: I['renderField'] = function () {
                     isArea={input?.isArea}
                     isPassword={input?.isPassword}
                     disabled={disabled}
+                    error={error}
                 />
                 {input?.isAddress && (
                     <>

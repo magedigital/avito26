@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4f6d7f6d.css",
-    "main.js": "/static/js/main.ff44b978.js",
+    "main.css": "/static/css/main.a8fd1fbd.css",
+    "main.js": "/static/js/main.1428fdd1.js",
     "static/js/95.8ca96b0f.chunk.js": "/static/js/95.8ca96b0f.chunk.js",
     "static/js/590.a946b9c4.chunk.js": "/static/js/590.a946b9c4.chunk.js",
     "static/js/996.99f7021e.chunk.js": "/static/js/996.99f7021e.chunk.js",
@@ -22,16 +22,16 @@
     "static/js/916.fa90c67c.chunk.js": "/static/js/916.fa90c67c.chunk.js",
     "static/js/828.4d5274c6.chunk.js": "/static/js/828.4d5274c6.chunk.js",
     "static/js/419.e09a05bd.chunk.js": "/static/js/419.e09a05bd.chunk.js",
-    "static/js/892.b07a9424.chunk.js": "/static/js/892.b07a9424.chunk.js",
-    "static/js/338.144414db.chunk.js": "/static/js/338.144414db.chunk.js",
-    "static/js/323.04193310.chunk.js": "/static/js/323.04193310.chunk.js",
-    "static/js/817.63a2d538.chunk.js": "/static/js/817.63a2d538.chunk.js",
+    "static/js/892.46cd0305.chunk.js": "/static/js/892.46cd0305.chunk.js",
+    "static/js/338.effcb446.chunk.js": "/static/js/338.effcb446.chunk.js",
+    "static/js/323.5f28e8e9.chunk.js": "/static/js/323.5f28e8e9.chunk.js",
+    "static/js/817.a666d198.chunk.js": "/static/js/817.a666d198.chunk.js",
     "static/js/303.4eca35c3.chunk.js": "/static/js/303.4eca35c3.chunk.js",
     "static/js/457.9c37345d.chunk.js": "/static/js/457.9c37345d.chunk.js",
     "static/js/270.2e2d1eff.chunk.js": "/static/js/270.2e2d1eff.chunk.js",
-    "static/js/751.983983aa.chunk.js": "/static/js/751.983983aa.chunk.js",
+    "static/js/751.b2c7a897.chunk.js": "/static/js/751.b2c7a897.chunk.js",
     "static/js/994.f3171c3e.chunk.js": "/static/js/994.f3171c3e.chunk.js",
-    "static/js/849.d9ddd88c.chunk.js": "/static/js/849.d9ddd88c.chunk.js",
+    "static/js/849.3740432c.chunk.js": "/static/js/849.3740432c.chunk.js",
     "static/media/main-back-01.png": "/static/media/main-back-01.9a6eea6740673b237893.png",
     "static/media/all-bonus.png": "/static/media/all-bonus.523f2bbc9eb75de83c27.png",
     "static/media/auto-3.png": "/static/media/auto-3.6b78fc9199ffee67e6fc.png",
@@ -63,7 +63,7 @@
     "static/media/done-icon.svg": "/static/media/done-icon.2608236e2dea34572c1c.svg"
   },
   "entrypoints": [
-    "static/css/main.4f6d7f6d.css",
-    "static/js/main.ff44b978.js"
+    "static/css/main.a8fd1fbd.css",
+    "static/js/main.1428fdd1.js"
   ]
 }

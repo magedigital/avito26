@@ -146,4 +146,12 @@
             background: var(--sub-color);
         }
     }
+
+    &__error {
+        margin: 5rem 0 0;
+        color: #ff4053;
+        font-weight: 400;
+        font-size: 14rem;
+        line-height: 1.3;
+    }
 }

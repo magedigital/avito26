@@ -8,6 +8,28 @@ import I from '../types.ts';
 window.visibillityHandlers = {};
 
 const init: I['init'] = async function () {
+    if (process.env.REACT_APP_ENV === 'local') {
+        const textNodes: HTMLElement[] = [];
+
+        const getTextNode = (n: HTMLElement) => {
+            if (n.nodeType === 3) {
+                textNodes.push(n);
+            } else {
+                n.childNodes.forEach((nn) => {
+                    getTextNode(nn as HTMLElement);
+                });
+            }
+        };
+
+        getTextNode(document.body);
+
+        textNodes.forEach((n) => {
+            if (n.textContent.includes('{{') && n.textContent.includes('}}')) {
+                n.remove();
+            }
+        });
+    }
+
     const rootJWT = document.querySelector('#root')!.getAttribute('data-jwt');
 
     if (rootJWT) {

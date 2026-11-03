@@ -1,12 +1,16 @@
+import { ApiError } from '@promoinstance/sdk';
+
 import { promo } from '@/src/index.tsx';
 import checkAuth from '@/src/utils/checkAuth.ts';
 import { getError } from '@/src/utils/getError.ts';
 
 import I from '../types.ts';
 
+import { anketFields } from '../static/fields.ts';
+
 const sendForm: I['sendForm'] = async function () {
     const { form } = this.state;
-    const { setStep } = this.props;
+    const { setStep, onRender } = this.props;
 
     if (!form) {
         return;
@@ -33,10 +37,30 @@ const sendForm: I['sendForm'] = async function () {
         await checkAuth({});
         await setStep({ step: 'complete' });
     } catch (e) {
-        await this.asyncSetState({ error: getError(e) });
+        const errors: Partial<Record<string, string>> = {};
+
+        if (e instanceof ApiError) {
+            if (e.details) {
+                e.details.forEach((f) => {
+                    const fieldName = f.field.split('.').pop()!;
+                    if (anketFields[fieldName]) {
+                        errors[fieldName] = f.issue;
+                    }
+                });
+
+                if (Object.keys(errors).length) {
+                    await this.asyncSetState({ errors });
+                }
+            }
+        }
+
+        if (!Object.keys(errors).length) {
+            await this.asyncSetState({ error: getError(e) });
+        }
     }
 
     await this.asyncSetState({ loadingKey: undefined });
+    await onRender();
 };
 
 export default sendForm;

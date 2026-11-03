@@ -28,7 +28,7 @@ class Field extends Default<FieldI['props'], FieldI['state']> implements FieldI 
     renderField = renderField;
 
     render() {
-        const { className, support, input, type, info } = this.props;
+        const { className, support, input, type, info, error } = this.props;
 
         return (
             <div
@@ -58,6 +58,7 @@ class Field extends Default<FieldI['props'], FieldI['state']> implements FieldI 
                     </a>
                 )}
                 {info && !info.href && <p className="field__info">{info.text}</p>}
+                {error && <div className="field__error">{error}</div>}
             </div>
         );
     }

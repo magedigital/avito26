@@ -17,6 +17,7 @@ type PropsT = {
     disabled: boolean;
     isArea: boolean;
     isPassword: boolean;
+    error: string;
 }>;
 
 type StateT = {

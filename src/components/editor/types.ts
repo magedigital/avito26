@@ -1,6 +1,8 @@
 import DefaultI from '@/src/components/default/types';
 
-type PropsT = {};
+type PropsT = {
+    onRender?: () => Promise<void>;
+};
 
 type StateT = {
     isEdited?: boolean;
@@ -10,6 +12,7 @@ type StateT = {
     listRenderKey?: string;
     listUpdateKey?: string;
     isListLoading?: boolean;
+    errors?: Partial<Record<string, string>>;
     error?: Partial<{
         name: string;
         text: string;
