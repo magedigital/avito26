@@ -2,6 +2,7 @@ import React from 'react';
 
 import Button from '@/src/components/button/Button.tsx';
 import Editor from '@/src/components/editor/Editor.tsx';
+import Error from '@/src/components/error/Error.tsx';
 import Phone from '@/src/services/phone/Phone.service.ts';
 
 import init from './methods/init.ts';
@@ -24,8 +25,8 @@ class CompleteBlock
     init = init;
 
     render() {
-        const { tgUrl } = this.state;
-        const { authUser, setStep } = this.props;
+        const { tgUrl, tgError } = this.state;
+        const { authUser, setStep, onRender } = this.props;
 
         if (!authUser) {
             return;
@@ -62,11 +63,17 @@ class CompleteBlock
                         <p>{authUser.categoryTitle}</p>
                     </div>
                 </div>
-                <div className="popup__blockButton">
-                    <Button className="_purple" href={tgUrl}>
-                        Перейти в Telegram-бот
-                    </Button>
-                </div>
+                {tgUrl ? (
+                    <div className="popup__blockButton">
+                        <Button className="_purple" href={tgUrl}>
+                            Перейти в Telegram-бот
+                        </Button>
+                    </div>
+                ) : tgError ? (
+                    <div className="popup__blockError">
+                        <Error error={tgError} callback={onRender} />
+                    </div>
+                ) : null}
                 <div className="popup__blockButton">
                     <Button
                         className="_purpleEmpty"

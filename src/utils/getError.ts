@@ -14,4 +14,6 @@ export const getError = (e: unknown): string | undefined => {
 
         return errorText;
     }
+
+    return 'Неизвестная ошибка';
 };

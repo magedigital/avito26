@@ -12,6 +12,7 @@ type PropsT = {
 
 type StateT = {
     tgUrl?: string;
+    tgError?: string;
 };
 
 interface CompleteBlockI extends EditorI<PropsT, StateT> {}
