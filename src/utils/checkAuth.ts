@@ -51,7 +51,7 @@ export default async function checkAuth({ redirect }: ParamsT): Promise<ProfileT
     } catch (e) {
         await logoutHandler();
 
-        return;
+        return Promise.reject();
     }
 
     if (!user) {
